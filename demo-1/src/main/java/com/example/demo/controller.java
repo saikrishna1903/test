@@ -10,4 +10,9 @@ public class controller {
 	public String hai() {
 		return "krishna";
 	}
+	
+	@GetMapping("/")
+	public String hai1() {
+		return "This is jenkins ci/cd";
+	}
 }
