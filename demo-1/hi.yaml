@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dock-k8-deployment
+  labels: 
+    app: dock-app
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dock-app 
+  template:
+    metadata:
+      labels: 
+        app: dock-app
+    spec:
+      containers:
+      - name: docker-app
+        image: saikrishna1903/docker-deploydemo     
+        ports:
+        - containerPort: 8080    
