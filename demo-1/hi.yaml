@@ -18,4 +18,20 @@ spec:
       - name: docker-app
         image: saikrishna1903/docker-deploydemo     
         ports:
-        - containerPort: 8080    
+        - containerPort: 8080  
+        
+        
+ ---
+apiVersion: v2
+kind: Service
+metadata:
+  name: app-setv
+spec:
+  selector:
+     labels:
+       app: dock-app
+  ports:
+    - protocal: TCP
+      port: 80
+      targetPort: 8081
+    
